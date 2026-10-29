@@ -1,0 +1,135 @@
+{
+  "info": {
+    "_postman_id": "135d0f64-af6c-42c0-936b-8a9d559c4508",
+    "name": "notion-link",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "20499357"
+  },
+  "item": [
+    {
+      "name": "query database",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{NOTION_TOKEN}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Notion-Version",
+            "value": "2022-06-28",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.notion.com/v1/databases/3fdfb597c246808a8669e378cfc445f5/query",
+          "protocol": "https",
+          "host": [
+            "api",
+            "notion",
+            "com"
+          ],
+          "path": [
+            "v1",
+            "databases",
+            "3fdfb597c246808a8669e378cfc445f5",
+            "query"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update database",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{NOTION_TOKEN}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Notion-Version",
+            "value": "2022-06-28",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"properties\": {\r\n        \"Translate\": {\r\n            \"rich_text\": [\r\n                {\r\n                    \"text\": {\r\n                        \"content\": \"muhahahaha\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.notion.com/v1/pages/404fb597-c246-80f1-b6aa-c2d2e0de5ebe",
+          "protocol": "https",
+          "host": [
+            "api",
+            "notion",
+            "com"
+          ],
+          "path": [
+            "v1",
+            "pages",
+            "404fb597-c246-80f1-b6aa-c2d2e0de5ebe"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "NOTION_TOKEN",
+      "value": ""
+    }
+  ]
+}
